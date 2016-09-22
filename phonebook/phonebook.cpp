@@ -38,8 +38,7 @@ void thelist(char arr[MIN][COL][MAX], int numEntered)
 	int i;
 	for (i = 0; i < numEntered; i++)
 	{
-		cout << arr[i][0] << endl;
-		cout << arr[i][1] << endl;
+		cout << "Name: " << arr[i][0] << " Phone #: " << arr[i][1] << endl;
 	}
 }
 
