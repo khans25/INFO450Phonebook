@@ -22,12 +22,16 @@ int main()
 	for (i = 0; i < MIN && (answer == 'y' || answer == 'Y'); i++)
 	{
 		InsName(nameList);
-		cout << "Do you have additional names to enter? Y = Yes, anything else is No" << endl;
+		cout << "-----------------------------------------------------------" << endl;
+		cout << "Want to enter additional entries? [Y] = Yes" << endl;
+		cout << "Want to see list? [D] = Display" << endl;
+		cout << "Want to exit? Enter any other key besides above options." << endl;
 		cin >> answer;
 		cin.clear();
 		cin.ignore();
 	}
-	cout << "Names entered: " << i << endl;
+
+	cout << "Entries: " << i << endl;
 	thelist(nameList, i);
 
     return 0;
@@ -38,7 +42,7 @@ void thelist(char arr[MIN][COL][MAX], int numEntered)
 	int i;
 	for (i = 0; i < numEntered; i++)
 	{
-		cout << "Name: " << arr[i][0] << " Phone #: " << arr[i][1] << endl;
+		cout << "Name: " << arr[i][0] << " | Phone #: " << arr[i][1] << endl;
 	}
 }
 
@@ -53,7 +57,7 @@ void InsName(char arr[MIN][COL][MAX])
 	{
 		cout << "Insert Name (First, Last): " << endl;
 		cin.getline(arr[i][0], MAX);
-		cout << "Insert Phone #: " << endl;
+		cout << "Insert Phone # (Ex. 111-222-3333): " << endl;
 		cin.getline(arr[i][1], MAX);
 		i++;
 	}
