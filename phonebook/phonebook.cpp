@@ -7,14 +7,15 @@
 using namespace std;
 
 const int MIN = 10;
-const int MAX = 20;
+const int COL = 2;
+const int MAX = 50;
 
-void thelist(char mylist[][MAX], int numEntered);
-void InsName(char mylist[][MAX]);
+void thelist(char arr[MIN][COL][MAX], int numEntered);
+void InsName(char arr[MIN][COL][MAX]);
 
 int main()
 {
-	char nameList[MIN][MAX];
+	char nameList[MIN][COL][MAX];
 	int i;
 	char answer = 'y';
 
@@ -32,16 +33,16 @@ int main()
     return 0;
 }
 
-void thelist(char mylist[][MAX], int numEntered)
+void thelist(char arr[MIN][COL][MAX], int numEntered)
 {
 	int i;
 	for (i = 0; i < numEntered; i++)
 	{
-		cout << mylist[i] << endl;
+		cout << arr[i] << endl;
 	}
 }
 
-void InsName(char mylist[][MAX])
+void InsName(char arr[MIN][COL][MAX])
 {
 	static int i = 0;
 	if (i >= MIN)
@@ -51,7 +52,9 @@ void InsName(char mylist[][MAX])
 	else
 	{
 		cout << "Insert Name (First, Last): " << endl;
-		gets_s(mylist[i]);
+		cin.getline(arr[MIN][0], MAX);
+		cout << "Insert Phone #: " << endl;
+		cin.getline(arr[MIN][1], MAX);
 		i++;
 	}
 }
