@@ -19,7 +19,7 @@ int main()
 	int i;
 	char answer = 'y';
 
-	for (i = 0; i < MIN && (answer == 'y' || answer == 'Y'); i++)
+	while (i = 0, i < MIN && (answer == 'y' || answer == 'Y'), i++)
 	{
 		InsName(nameList);
 		cout << "-----------------------------------------------------------" << endl;
@@ -29,8 +29,17 @@ int main()
 		cin >> answer;
 		cin.clear();
 		cin.ignore();
-	}
 
+		if (answer == 'd' || answer == 'D')
+		{
+			thelist(nameList, i);
+		}
+
+		else if (answer == 'q' || answer == 'Q')
+		{
+			break;
+		}
+	}
 	cout << "Entries: " << i << endl;
 	thelist(nameList, i);
 
